@@ -124,6 +124,7 @@ for nn in freqarray:
      back2num= float(truncnumstr)
      truncarray.append(back2num)
 
+truncarray.reverse()
 print("here is truncated number list: \n")
 print(str(truncarray) + "\n")
 
@@ -134,13 +135,16 @@ with open(output_trunc_filename, 'w') as f:
     write.writerow(truncarray)
     print("Created CSV: " + output_trunc_filename + "\n")
 
-
-
-'''
+truncarray.reverse()
 # write reverse trunc file.
-with open(frmt_numb_output_filename_reverse, 'w') as f:
+# python reverse() only works on ints, not any other data type.
+# reversed() works on strings.
+
+print("Here is reversed trunc list")
+print(truncarray)
+
+with open(output_trunc_filename_reversed, 'w') as f:
     # using csv.writer method from CSV package
     write = csv.writer(f)
-    write.writerow(pythonstinks)
-    print("Created CSV: " + frmt_numb_output_filename_reverse + "\n")
-'''
+    write.writerow(truncarray)
+    print("Created CSV: " + output_trunc_filename_reversed + "\n")
