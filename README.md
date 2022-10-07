@@ -26,10 +26,4 @@ between each float is 3 cents
 the range of the file is C0 to C10 (10 octaves)
 
 one application for this is lookup tables for devices like the AD9833 IC.
-they require frequencies to direct their internal NCO to produces a given
-frequency at output
-B
-A
-frequency at output.
-they require freqencies at input to produce their output
-So the values above trap around 4K floats
+the lookup table finds a 12 bit entry from a ADC and returns a frequency for the chip to send to its output.
