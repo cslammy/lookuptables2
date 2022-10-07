@@ -1,7 +1,6 @@
 What is this? Python script to create lookup tables
 but of a strange kind: each array entry is a frequency
 
-this is written in python
 Take a look at what to enter (edit the main.py file)
 
      ########## change these values##############################
