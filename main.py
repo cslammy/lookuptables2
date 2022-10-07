@@ -47,7 +47,10 @@ if __name__ == '__main__':
      starting_value = 'C0'  #what semitone do you want to start at?
      stop_value = 'C10'      #what semitone do you want to stop at?
      output_filename = "list.csv"
+     frmt_numb_output_filename = "list.trunc_floats.csv"
      output_filename_reversed = "list.rev.csv"
+     frmt_numb_output_filename_reverse = "list.trunc_floats_reverse.csv"
+     precision = 2
      ############################################################
 
 
@@ -88,21 +91,10 @@ if __name__ == '__main__':
                      end_this_loop = 2
                      break
 
-     # truncate numbers to x places
-
-     print("here is your list: \n")
-
-     print(str(freqarray) + "\n")
-
-     lengg = str(len(freqarray))
-
-     print("Your list has " + lengg + " entries\n \n")
-
-
-
-     #write to file
+             # write to file
      with open(output_filename, 'w') as f:
-
+         print("here is freq array: \n")
+         print(str(freqarray) + "\n")
          # using csv.writer method from CSV package
          write = csv.writer(f)
 
@@ -119,3 +111,47 @@ with open(output_filename_reversed, 'w') as f:
 
     write.writerow(freqarray)
     print("Created CSV: " + output_filename_reversed + "\n")
+
+### make new output with truncated floats (set by precision variable)
+
+truncarray = []
+ # truncate numbers to x places
+ # use this trick: https://stackoverflow.com/questions/29543012/variable-number-of-decimal-digits-in-string-format
+
+for nn in freqarray:
+     truncnumstr = "%0.*f" % (precision, nn)
+     #convert back to floats.
+     back2num= float(truncnumstr)
+     truncarray.append(back2num)
+
+print("here is truncated number list: \n")
+print(str(truncarray) + "\n")
+'''
+     print("here is your list: \n")
+
+     print(str(freqarray) + "\n")
+
+     lengg = str(len(freqarray))
+
+     print("Your list has " + lengg + " entries\n \n")
+
+
+
+
+# write trunc file.
+with open(frmt_numb_output_filename, 'w') as f:
+    # using csv.writer method from CSV package
+    write = csv.writer(f)
+    write.writerow(str(back2num))
+    print("Created CSV: " + frmt_numb_output_filename + "\n")
+
+pythonstinks = str(back2num).reversed()
+
+
+# write reverse trunc file.
+with open(frmt_numb_output_filename_reverse, 'w') as f:
+    # using csv.writer method from CSV package
+    write = csv.writer(f)
+    write.writerow(pythonstinks)
+    print("Created CSV: " + frmt_numb_output_filename_reverse + "\n")
+'''
