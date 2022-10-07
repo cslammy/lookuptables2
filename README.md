@@ -18,8 +18,8 @@ Take a look at what to enter (edit the main.py file)
 Output is 4 CSV files saved to the same directory you run
 the script in  
 
-Precision is the # of decimel places you want after each
-frequency entry
+Precision is the # of decimel places you want for each
+frequency entry.
 
 The data above creates files with about 4000 floats in a CSV.
 
