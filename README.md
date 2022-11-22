@@ -28,10 +28,11 @@ the range of the file is C0 to C10 (10 octaves).
 
 Hence the creation about about 4K entries into the array.
 
-one application for this is lookup tables for devices like the AD9833 IC.
+One application for this is lookup tables for devices like the AD9833 IC.
 The lookup table allows you to enter a 12 bit value from a ADC and get a return of a frequency for the chip to send to its output.
 
 The lookup table is being used for an AD9833 project
 where ADC values to frequency conversion is needed.
 see the blog post here: http://audiodiwhy.blogspot.com/2022/10/ad9833-rp2040-vco-voltoctave-is-working.html
+
 
